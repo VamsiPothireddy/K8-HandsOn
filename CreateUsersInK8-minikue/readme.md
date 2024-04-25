@@ -101,6 +101,13 @@ There are two ways do it
 
 openssl x509 -req -in devuser.csr -CA /var/lib/minikube/certs/ca.crt -CAkey /var/lib/minikube/certs/ca.key -CAcreateserial -out devuser.crt -days 365
 copy conetnet of devuser.crt and devuser.key to local to point add user in kubeconfig file
+Add user to kubeconfig 
+kubectl config set-credentials devsuer --client-certificate=C:/Work/K8Learning/devuser/devuser.crt --client-key=C:/Work/K8Learning/devuser/devuser.key 
+map devsuer to minikube cluster
+kubectl config set-context devuser-minikube --user=devsuer --cluster=minikube
+
+Now use newly created context using kubectl config use-context devuser-minikube and try listing pods  kubectl get pods --- we see error forbidden
+Create role and binding role to devuser and we should be able to list pods
    
 3) Creating CSR object and signing
 
