@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rest-nodejs-app-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: rest-nodejs-app
+  template:
+    metadata:
+      labels:
+        app: rest-nodejs-app
+    spec:
+      containers:
+        - name: rest-nodejs-app
+          image: vamsipothireddy/rest-nodejs-app:9389
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
