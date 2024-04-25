@@ -1,4 +1,5 @@
-Skeleton of Kubeconfig file
+**Skeleton of Kubeconfig file**
+
 usullay located under user folder ~/.kube/config
 
 It has 3 section Clusters,Contexts,Users
@@ -68,7 +69,8 @@ users:
 
 
 
-Adding Users to Minikube cluster
+**Adding Users to Minikube cluster**
+
 
 K8 Authnentication Mechanism:
 When K8 is created , it comes with its own prublic and private key pair . All authentications are taken care using this set of files.
@@ -82,7 +84,8 @@ kubectl describe pod kube-apiserver-minikube -n kube-system. Look for cert and k
  --client-ca-file=/var/lib/minikube/certs/ca.crt
 
 
-Adding users:
+**Adding users:**
+
 Generate private key and CSR (Certficate Signing Request ) using any tool and Sign CSR using K8's puboic cert whiich gives pubcert file for user . 
 
 
