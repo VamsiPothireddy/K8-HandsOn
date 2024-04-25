@@ -84,7 +84,7 @@ kubectl describe pod kube-apiserver-minikube -n kube-system. Look for cert and k
  --client-ca-file=/var/lib/minikube/certs/ca.crt
 
 
-**Adding users:**
+
 
 Generate private key and CSR (Certficate Signing Request ) using any tool and Sign CSR using K8's puboic cert whiich gives pubcert file for user . 
 
