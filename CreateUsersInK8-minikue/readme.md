@@ -95,5 +95,12 @@ generate private key & CSR
 openssl genrsa -out devuser.key 2048 
 openssl req -new -key devuser.key -out devuser.csr -subj "/CN=devuser/O=developers"
 
+Generate devuser certficate file using CSR 
+There are two ways do it 
+1) Manually using client-ca-file file client-key-file
 
+openssl x509 -req -in devuser.csr -CA /var/lib/minikube/certs/ca.crt -CAkey /var/lib/minikube/certs/ca.key -CAcreateserial -out devuser.crt -days 365
+copy conetnet of devuser.crt and devuser.key to local to point add user in kubeconfig file
+   
+3) Creating CSR object and signing
 
