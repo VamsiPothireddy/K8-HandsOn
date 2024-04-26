@@ -5,12 +5,7 @@ usullay located under user folder ~/.kube/config
 It has 3 section Clusters,Contexts,Users
 Below file has configured with two clusters , one with minkube runnung locally and another is aws managed cluster eks
 
-Context here is mapping between Users and Cluster. Here Minikube user has mapped to minikube cluster and user name called 'arn:aws:eks:us-east-2:<AWSAcciountNumber>:cluster/test-cluster' mapped to 'arn:aws:eks:us-east-2:<AWSAcciountNumber>:cluster/test-cluster' cluster
-
-
-
-
-
+Context here is mapping between Users and Cluster. Here Minikube user has mapped to minikube cluster and user name called 'arn:aws:eks:us-east-2:<AWSAcciountNumber>:cluster/test-cluster' mapped to 'arn:aws:eks:us-east-2:<AWSAcciountNumber>:cluster/test-cluster' cluste
 
 
 
@@ -33,28 +28,30 @@ kubectl describe pod kube-apiserver-minikube -n kube-system. Look for cert and k
 
 
 
-Generate private key and CSR (Certficate Signing Request ) using any tool and Sign CSR using K8's puboic cert whiich gives pubcert file for user . 
-
-
+Generate private key and CSR (Certficate Signing Request ) using any tool and Sign CSR using K8's public cert & private key whiich gives pubcert file for user . 
 Add user's public key and priviate key to kubeconfig file. 
 
-generate private key & CSR
+**Commands to generate private key & CSR**
 openssl genrsa -out devuser.key 2048 
 openssl req -new -key devuser.key -out devuser.csr -subj "/CN=devuser/O=developers"
 
 Generate devuser certficate file using CSR 
 There are two ways do it 
-1) Manually using client-ca-file file client-key-file
+
+**1) Manually using client-ca-file file client-key-file**
 
 openssl x509 -req -in devuser.csr -CA /var/lib/minikube/certs/ca.crt -CAkey /var/lib/minikube/certs/ca.key -CAcreateserial -out devuser.crt -days 365
+
 copy conetnet of devuser.crt and devuser.key to local to point add user in kubeconfig file
+
 Add user to kubeconfig 
 kubectl config set-credentials devsuer --client-certificate=C:/Work/K8Learning/devuser/devuser.crt --client-key=C:/Work/K8Learning/devuser/devuser.key 
+
 map devsuer to minikube cluster
 kubectl config set-context devuser-minikube --user=devsuer --cluster=minikube
 
 Now use newly created context using kubectl config use-context devuser-minikube and try listing pods  kubectl get pods --- we see error forbidden
 Create role and binding role to devuser and we should be able to list pods
    
-3) Creating CSR object and signing
+**2) Creating CSR object and signing**
 
