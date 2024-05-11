@@ -55,6 +55,10 @@ kubectl config set-context devuser-minikube --user=devsuer --cluster=minikube
 Now use newly created context using kubectl config use-context devuser-minikube and try listing pods  kubectl get pods --- we see error forbidden
 
 Create role and binding role to devuser and we should be able to list pods.
+
+
+<img width="1440" alt="Screen Shot 2024-05-11 at 8 21 33 AM" src="https://github.com/VamsiPothireddy/K8-HandsOn/assets/47288461/70505ba7-5ac6-4e1e-acfe-997beeb81925">
+
    
 **2) Creating CSR object and signing**
 
