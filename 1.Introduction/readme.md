@@ -1,7 +1,7 @@
 ### What is Kubernetes and why do we need it?
 Kubernetes is a container orchestration platform which addresses the limitations of just using containers alone. Docker Swarm is another orchestration solution, but Kubernetes offers more features. Let's examine the limitations first. I'm referring to Docker as the container platform and Kubernetes as the orchestration platform.
 
-**Limitations**
+**Limitations Of Container platforms (Docker)  **
 
 Single Node: By default, Docker installs on a single node (which may be a physical machine or EC2 instance) and runs containers on top of it. This creates a single point of failure. Kubernetes addresses this using a master node architecture where multiple machines (EC2 instances or physical bare metal boxes) form a cluster.
 
