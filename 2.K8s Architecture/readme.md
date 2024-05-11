@@ -1,5 +1,6 @@
 ## Architecture 
 
+<img width="725" alt="image" src="https://github.com/VamsiPothireddy/K8-HandsOn/assets/47288461/17a7a70b-169f-42cb-8565-467c118a18d4">
 
 
 ### Comparison with Docker and how it addresses limitations
