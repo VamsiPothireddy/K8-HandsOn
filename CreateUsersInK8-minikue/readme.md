@@ -62,3 +62,18 @@ Create role and binding role to devuser and we should be able to list pods.
    
 **2) Creating CSR object and signing**
 
+Lets create another user devuser2 using CSR object method
+Log in minikube docker container and create another private key and csr for devuser2. While creating CSR we dont need subject name
+
+openssl genrsa -out devuser2.key 2048 
+openssl req -new -key devuser2.key -out devuser2.csr
+
+convert to base 64 
+cat devuser2.csr |base64
+
+Add CSR in csr.yml and apply 
+
+Approve CSR 
+kubectl approve certficate 
+
+kubectl get  csr devuser2 -oyaml -- copy certricate and decode from bse64 to plai
