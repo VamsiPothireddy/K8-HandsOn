@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: node-service-logger1
+spec:
+  containers:
+  - name: node-service-logger1
+    image: node-service-logger1
+    ports:
+    - containerPort: 3000
