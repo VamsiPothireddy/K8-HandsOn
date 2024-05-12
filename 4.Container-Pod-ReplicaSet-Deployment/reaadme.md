@@ -2,8 +2,6 @@ In Docker, when we need to run a container, we use the docker run command, speci
 
 For example:
 
-css
-Copy code
 docker run -d --name node-service-logger1 -p 3001:3000
 In a pod.yml file, we can specify all these details. A Pod is analogous to container creation in Docker, where all the arguments passed in docker run are specified in the pod.yml.
 
