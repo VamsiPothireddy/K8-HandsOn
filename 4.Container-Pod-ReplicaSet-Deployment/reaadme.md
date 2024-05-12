@@ -16,4 +16,7 @@ When we create depployment.yml it inturn creates controller called replicaset wh
 
 In K8s replicaSet is one of the controllers . In general what contrillers does is checkng desired vs actual and meets actual
 
+<img width="705" alt="Screen Shot 2024-05-12 at 9 23 48 AM" src="https://github.com/VamsiPothireddy/K8-HandsOn/assets/47288461/63aa722e-565c-400d-a008-ea8bb0d62e2e">
+
+
 
