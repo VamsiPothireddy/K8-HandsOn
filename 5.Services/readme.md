@@ -17,6 +17,9 @@ Cluster IP is by default; we need to get into the worker node and access it.
 Node port, if we have access to the worker node we can access.
 Load balancing, this usually gives a public IP address where anyone in the world can access using the public IP address, but this can be achieved using EKS/AKS/some cloud provider. For example, if we go with EKS, the cloud control manager in K8s helps in creating a public IP with ELB (Elastic Load Balancer) for the public to access.
 
+If we want to get capabiities of nodeport and load balancer always start minikube with hyperkit supervisor by default if we dont specify it runs with docker which gives only limited features 
+
+minikube start --memory=4096 --driver=hyperkit
 
 ![K8s-4](https://github.com/VamsiPothireddy/K8-HandsOn/assets/47288461/9f8feeb4-0e56-48bf-b735-f985da7999b1)
 <img width="1440" alt="Screen Shot 2024-05-14 at 7 33 27 AM 1" src="https://github.com/VamsiPothireddy/K8-HandsOn/assets/47288461/adb69836-6a12-4835-9fc9-f1fa8503bd3f">
@@ -24,4 +27,4 @@ Load balancing, this usually gives a public IP address where anyone in the world
 
 
 
-minikube start --memory=4096 --driver=hyperkit
+
