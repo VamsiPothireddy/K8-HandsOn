@@ -22,6 +22,6 @@ Load balancing, this usually gives a public IP address where anyone in the world
 <img width="1440" alt="Screen Shot 2024-05-14 at 7 33 27 AM 1" src="https://github.com/VamsiPothireddy/K8-HandsOn/assets/47288461/adb69836-6a12-4835-9fc9-f1fa8503bd3f">
 
 
-<img width="1440" alt="Screen Shot 2024-05-14 at 7 36 32 AM" src="https://github.com/VamsiPothireddy/K8-HandsOn/assets/47288461/16f6e7d0-8d4c-4d4c-a771-44c8e0207bdb">
+
 
 minikube start --memory=4096 --driver=hyperkit
