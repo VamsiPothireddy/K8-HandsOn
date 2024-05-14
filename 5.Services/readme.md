@@ -23,4 +23,5 @@ minikube start --memory=4096 --driver=hyperkit
 
 ![K8s-4](https://github.com/VamsiPothireddy/K8-HandsOn/assets/47288461/9f8feeb4-0e56-48bf-b735-f985da7999b1)
 <img width="1440" alt="Screen Shot 2024-05-14 at 7 33 27 AM 1" src="https://github.com/VamsiPothireddy/K8-HandsOn/assets/47288461/adb69836-6a12-4835-9fc9-f1fa8503bd3f">
-<img width="1440" alt="Screen Shot 2024-05-14 at 12 46 09 PM" src="https://github.com/VamsiPothireddy/K8-HandsOn/assets/47288461/431527e3-3e7f-470d-8f09-19929494e2f9">
+<img width="1440" alt="Screen Shot 2024-05-14 at 12 52 02 PM" src="https://github.com/VamsiPothireddy/K8-HandsOn/assets/47288461/127737ff-319c-42c2-8ab6-f7b04fb70032">
+
