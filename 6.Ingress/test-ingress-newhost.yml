@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: node-service-ingress-temp
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /log/$1
+spec:
+  rules:
+  - host: brownpanthertech-temp.com
+    http:
+      paths:
+      - path: /templogs/log/(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: node-service-logger1-loadbalancer-mode
+            port:
+              number: 80
