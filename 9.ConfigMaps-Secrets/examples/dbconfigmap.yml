@@ -4,4 +4,4 @@ metadata:
   name: db-configmap
 data:
   host: "brownpanthertech.host"
-  port: "3307"
+  port: "3306"
