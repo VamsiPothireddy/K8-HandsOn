@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-service-logger1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: node-service-logger1
+  template:
+    metadata:
+      labels:
+        app: node-service-logger1
+    spec:
+      containers:
+      - name: node-service-logger1
+        image: vamsipothireddy/node-service-logger1:latest
+        ports:
+        - containerPort: 3000
+        env:
+        - name: db-port
+          valueFrom:
+            configMapKeyRef:
+              name: db-configmap
+              key: port
+        - name: db-host
+          valueFrom:
+            configMapKeyRef:
+              name: db-configmap
+              key: host
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "250m"
+          limits:
+            memory: "256Mi"
+            cpu: "500m"

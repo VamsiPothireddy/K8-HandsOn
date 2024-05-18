@@ -1,0 +1,1 @@
+If we want to extend K8s capbilities , we can create custom resources . Ex : Networking capability can be enhanced using ISTIO . For that K8s allowed provider to define CRD (Custome resource  Definition) . We can create custiom resources aliging to defincation and also create custom contollers who watches these resources and take necessary actions 
