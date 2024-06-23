@@ -12,3 +12,5 @@ Autoscaling: Increasing containers based on load can be achieved with Kubernetes
 Meeting enterprise standards such as load balancing, whitelisting, blacklisting, etc., can all be achieved through Kubernetes.
 
 Kubernetes not only provides out-of-the-box solutions, but also offers flexibility to create custom functionality using custom resources. For example, Kubernetes provides load balancing by default, but using the Ingress Controller concept, we can achieve advanced load balancing by integrating with tools like F5 or Nginx.
+
+*******test******
