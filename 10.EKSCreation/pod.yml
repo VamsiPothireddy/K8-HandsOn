@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: simple-nginx
+  namespace: customnamespace  # Change this to your desired namespace
+spec:
+  containers:
+    - name: nginx
+      image: nginx:alpine  # Using the Alpine version of Nginx for a lightweight image
+      ports:
+        - containerPort: 80
