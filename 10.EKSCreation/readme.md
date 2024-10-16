@@ -30,3 +30,5 @@ deployment-2048-5686bb4958-p28lp   1/1     Running   0          39m   192.168.11
 deployment-2048-5686bb4958-rn4w9   1/1     Running   0          39m   192.168.88.71     ip-192-168-78-10.ec2.internal     <none>           <none>
 deployment-2048-5686bb4958-xrl2k   1/1     Running   0          39m   192.168.65.230    ip-192-168-78-10.ec2.internal     <none>           <none>
 
+![Screen Shot 2024-10-12 at 9 46 56 PM](https://github.com/user-attachments/assets/2a8ba041-0ac1-4bcc-b44f-39cd91815dcb)
+![Screen Shot 2024-10-12 at 8 26 27 AM](https://github.com/user-attachments/assets/bb80c394-4769-4211-8fa8-fe331f924c0e)
