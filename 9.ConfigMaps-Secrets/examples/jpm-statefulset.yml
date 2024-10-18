@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: jbpm
+spec:
+  serviceName: "jbpm"
+  replicas: 2
+  selector:
+    matchLabels:
+      app: jbpm
+  template:
+    metadata:
+      labels:
+        app: jbpm
+    spec:
+      containers:
+      - name: jbpm
+        image: jboss/jbpm-server-full:latest  # Updated image name
+        ports:
+        - containerPort: 8080  # First port for application
+        - containerPort: 8001  # Second port for additional service
+        volumeMounts:
+        - name: jbpm-data
+          mountPath: /opt/jboss/wildfly/bin/.niogit  # Path for data storage
+  volumeClaimTemplates:
+  - metadata:
+      name: jbpm-data
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          storage: 3Gi  # Adjust storage size as needed
+      volumeMode: Filesystem  # Specify volume mode
+      # No storage class needed for Minikube
+---
+# Optional Service to expose the StatefulSet
+apiVersion: v1
+kind: Service
+metadata:
+  name: jbpm-service
+spec:
+  ports:
+  - name: http  # Added name for the first port
+    port: 8080
+    targetPort: 8080
+  - name: http-8001  # Added name for the second port
+    port: 8001
+    targetPort: 8001  # Exposing both ports
+  selector:
+    app: jbpm
+  type: NodePort  # Use NodePort to expose the service in Minikube
